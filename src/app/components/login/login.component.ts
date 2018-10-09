@@ -47,9 +47,9 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem("role", x.role);
           sessionStorage.setItem("address", x.address);
           sessionStorage.setItem("batchEnd", x.batchEnd);
+          sessionStorage.setItem("userEmail", this.userEmail);
+          sessionStorage.setItem("userPassword", this.userPass);
         });
-        sessionStorage.setItem("userEmail", this.userEmail);
-        sessionStorage.setItem("userPassword", this.userPass);
         location.reload(true);
     },
       // TODO if an error is returned, return the error message to user
