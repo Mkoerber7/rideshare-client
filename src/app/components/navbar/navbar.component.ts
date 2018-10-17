@@ -13,6 +13,7 @@ import { Auth0Service } from '../../services/auth0.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
 
   /** Holds the current user of the app */
