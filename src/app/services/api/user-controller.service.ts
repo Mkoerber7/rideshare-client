@@ -353,11 +353,12 @@ export class UserControllerService {
   postProfileImage(imageFile: File){
     console.log('Image file is: ' + imageFile);
     console.log("Image Name is: " + imageFile.name);
-    const httpOptions = {headers: new HttpHeaders({'Content-Type':  'multipart/form-data'})}      
+    const httpOptions = {headers: new HttpHeaders({'Content-Type':  'multipart/form-data'})}
     //TODO: Send an image file 
      const uploadData = new FormData();
-     uploadData.append('newImage', imageFile, imageFile.name);
-     console.log(uploadData);
+     uploadData.append('file', imageFile, imageFile.name);
+     //uploadData.append('testData', 'myData');
+     console.log(uploadData.get('file'));
      return this.http.post(environment.apiUrl + "/storage/uploadFile", uploadData, httpOptions);
   }
 
