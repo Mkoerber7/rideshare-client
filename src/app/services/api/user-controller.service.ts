@@ -345,7 +345,6 @@ export class UserControllerService {
       .put<ContactInfo>(environment.apiUrl + contactInfoUri, newContactInfo);
   }
 
-<<<<<<< HEAD
   /*
   * Sends a image file to the the API  
   */
@@ -364,7 +363,6 @@ export class UserControllerService {
 
   // TODO
   // DELETE CONTACT-INFO
-=======
   updateStatusAndRole(id: number, active?: string, role?: string) {
     const body = {
       firstName: null,
@@ -378,7 +376,6 @@ export class UserControllerService {
       startTime: null,
       active: active
     }
->>>>>>> dev
 
     return this.http
       .put<User>(environment.apiUrl + `/users/${id}`, body)
