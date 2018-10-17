@@ -10,6 +10,7 @@ import { Car } from '../../models/car.model';
 import { Link } from '../../models/link.model';
 import { ContactInfo } from '../../models/contact-info.model';
 import { Role } from '../../models/role.model';
+import { RequestOptions } from '../../../../node_modules/@angular/http';
 
 /**
  * Enables multiple components to work with User services on the back-end
@@ -342,6 +343,22 @@ export class UserControllerService {
   updateContactInfo(contactInfoUri: Link<ContactInfo>, newContactInfo: ContactInfo): Observable<ContactInfo> {
     return this.http
       .put<ContactInfo>(environment.apiUrl + contactInfoUri, newContactInfo);
+  }
+
+  /*
+  * Sends a image file to the the API  
+  */
+
+  
+  postProfileImage(imageFile: File){
+    console.log('Image file is: ' + imageFile);
+    console.log("Image Name is: " + imageFile.name);
+    const httpOptions = {headers: new HttpHeaders({'Content-Type':  'multipart/form-data'})}      
+    //TODO: Send an image file 
+     const uploadData = new FormData();
+     uploadData.append('newImage', imageFile, imageFile.name);
+     console.log(uploadData);
+     return this.http.post(environment.apiUrl + "/storage/uploadFile", uploadData, httpOptions);
   }
 
   // TODO

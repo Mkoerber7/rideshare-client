@@ -32,6 +32,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CarRegistrationComponent } from './components/car-registration/car-registration.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { CallbackComponent } from './callback/callback/callback.component';
+import { ImageUploadModule } from "angular2-image-upload";
 // import { DateFormatPipe } from './pipes/date-format.pipe';
 
 /**
@@ -73,6 +74,7 @@ import { CallbackComponent } from './callback/callback/callback.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
+    ImageUploadModule.forRoot()
   ],
   providers: [
     NgbActiveModal,

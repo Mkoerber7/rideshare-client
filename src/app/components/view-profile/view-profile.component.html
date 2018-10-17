@@ -169,7 +169,8 @@
 
               <div class="input-group mb-3">
                 <div class="padBot"><span class="input-group-text" id="basic-addon1">Profile Picture</span></div>
-                <input class="profile-pic" type="file" name="pic" accept="image/*" (change)="selectFile($event)">
+                <input class="profile-pic" id="profImage" type="file" name="pic" accept="image/*" (change)="selectImage($event)"/>
+                <button class = "submit" id = "confirm button" (click) = "uploadFile()">Upload</button>
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">

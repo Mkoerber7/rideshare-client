@@ -150,4 +150,24 @@ export class ViewProfileComponent implements OnInit {
     let data;
     this.userService.getAllUsers().subscribe((x) => { data = x; this.users = data });
   }
+
+  /**
+   *  Stores our selected file 
+  */
+  selectedFile: File;
+  selectImage(event){
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+  }
+  /**
+   *  Post an image file to the API 
+   */
+   imageData: any;
+   uploadFile(){
+     let data;
+     this.userService.postProfileImage(this.selectedFile).subscribe((x) =>{data = x; this.imageData = data});
+   }
+
+  
+
 }

@@ -37,8 +37,9 @@ export class UsercardComponent implements OnInit {
     SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
     /** our list of swipecards: DUMMY DATA */
     swipecards: SwipecardModel[] = [
-
     ];
+
+    baseUrl = "";
 
 
     /** User currently being looked at */
