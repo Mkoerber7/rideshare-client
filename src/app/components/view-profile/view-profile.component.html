@@ -21,7 +21,6 @@
                   First name cannot be empty
                 </div>
                 <div *ngIf="firstname.errors.maxLength">
-                  ;
                   First name cannot be more than 15 characters
                 </div>
               </div>
@@ -164,7 +163,11 @@
                 </div>
               </div>
               <!-- back-end can only handle 225 characters -->
-              <textarea type="text" class="form-control" rows="4" [(ngModel)]="bio" required maxlength="225"></textarea>
+              <textarea type="text" class="form-control" rows="4" [(ngModel)]="bio" required maxlength="225" placeholder="Enter up to 225 chracters..."></textarea>
+              <br>
+              <!-- not yet implemented -->
+              <button class="btn btnEdit" id="edit">Update<i class="fas fa-pencil-alt"></i></button>
+              <br>
               <br>
 
               <div class="input-group mb-3">
